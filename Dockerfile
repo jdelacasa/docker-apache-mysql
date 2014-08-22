@@ -18,7 +18,7 @@ RUN apt-get install -y mysql-server mysql-client
 
 # install apache2 and php
 
-RUN apt-get install -y php5 libapache2-mod-php5 apache2
+RUN apt-get install -y php5 libapache2-mod-php5 apache2 libapache2-mod-auth-mysql php5-mysql
 RUN apt-get install -y php5-mysql php5-curl php5-gd php5-idn php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-mhash php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl php5-json
  
 # install phpmyadmin
@@ -35,16 +35,8 @@ ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # eye2 installation
 
 #RUN apt-get -y install wget
-#RUN apt-get -y install apache2
-#RUN apt-get -y install mysql-server libapache2-mod-auth-mysql php5-mysql
-#RUN apt-get -y install php5 libapache2-mod-php5 php5-mcrypt
-#RUN apt-get -y install php5-gd
-#RUN apt-get -y install php5-curl
-#RUN apt-get -y install php5-mcrypt
 #RUN apt-get -y install python
-#RUN apt-get -y install zip
-#RUN apt-get -y install unzip
-#RUN apt-get -y install exif
+#RUN apt-get -y install zip unzip exif
 #RUN apt-get -y install openoffice.org
 #RUN apt-get -y install libimage-exiftool-perl
 
