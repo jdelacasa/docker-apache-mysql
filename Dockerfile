@@ -1,4 +1,4 @@
-FROM debian:wheezy
+FROM ubuntu:14.04
 MAINTAINER Jose Miguel de la Casa <nacicansao@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
