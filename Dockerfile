@@ -3,11 +3,13 @@ MAINTAINER Jose Miguel de la Casa <nacicansao@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
+RUN useradd -d /home/user -m  -s /bin/bash user
+RUN echo "user:temporal" | chpasswd
 RUN echo "root:temporal" | chpasswd
 
 # install ssh and supervisord
 RUN apt-get update
-RUN apt-get install -y curl ssh supervisor apt-utils
+RUN apt-get install -y curl ssh supervisor apt-utils sudo
 RUN mkdir /var/run/sshd
 RUN chown root:root /var/run/sshd
 RUN mkdir /var/log/supervisord
